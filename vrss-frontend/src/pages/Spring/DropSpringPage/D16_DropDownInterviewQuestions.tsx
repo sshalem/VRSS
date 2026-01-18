@@ -1,0 +1,60 @@
+import { useEffect, useRef, useState } from "react";
+import { useLocation } from "react-router-dom";
+import { SideDropdownLink, SideDropDownTopic } from "../../../components";
+
+const D16_DropDownInterviewQuestions = () => {
+  const [showList, setShowList] = useState<boolean>(false);
+  const [listHeight, setListHeight] = useState<number>();
+
+  let location = useLocation();
+
+  const divRef = useRef<HTMLDivElement | null>(null);
+
+  const handleOpenList = () => {
+    setShowList(!showList);
+    if (divRef.current !== null) {
+      setListHeight(divRef.current.scrollHeight);
+    }
+  };
+
+  useEffect(() => {
+    if (location.pathname.includes("spring/interview-questions")) {
+      if (location.pathname.split("/")[3] === undefined) {
+        // do nothing , this way I prevent the re-render of  setShowList(true);
+      } else {
+        setShowList(true);
+      }
+      if (divRef.current !== null) {
+        setListHeight(divRef.current.scrollHeight);
+      }
+    } else {
+      setShowList(false);
+    }
+  }, [location.pathname]);
+
+  return (
+    <section>
+      <SideDropDownTopic
+        showList={showList}
+        handleOpenList={handleOpenList}
+        internalLink="/spring/interview-questions"
+        topicName="16. Interview Questions"
+      />
+
+      <div
+        style={showList ? { height: `${listHeight}px` } : { height: "0px" }}
+        className={`overflow-hidden bg-white transition-[height] duration-100 ease-in-out`}
+        ref={divRef}
+      >
+        <SideDropdownLink sideDropDownNavName="Stream Records Instantly" internalLink="/spring/interview-questions/stream-records-instantly" />
+        <SideDropdownLink sideDropDownNavName="Loop Stream Par Stream" internalLink="/spring/interview-questions/loop-stream-parallel-stream" />
+        <SideDropdownLink sideDropDownNavName="MultiThread Block Queue" internalLink="/spring/interview-questions/multithread-block-queue" />
+        <SideDropdownLink sideDropDownNavName="JavaInUse Question" internalLink="/spring/interview-questions/java-in-use" />
+        <SideDropdownLink sideDropDownNavName="JavaTechie Questions" internalLink="/spring/interview-questions/java-techie" />
+        <SideDropdownLink sideDropDownNavName="GenZ Career" internalLink="/spring/interview-questions/gen-z-career" />
+      </div>
+    </section>
+  );
+};
+
+export default D16_DropDownInterviewQuestions;
