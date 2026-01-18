@@ -4,11 +4,11 @@
 // Thus, I add forward slash to each link
 
 export const links: string[] = [
-  "/waferstage",
-  "/waferhandler",
-  "/Reticlestage",
-  "/reticlehandler",
-  "/ft",
+  "/wafer-stage",
+  "/wafer-handler",
+  "/reticle-stage",
+  "/reticle-handler",
+  "/F&T",
   "/software",
   "/illumination",
   "/sensors",

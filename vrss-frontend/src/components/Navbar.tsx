@@ -169,7 +169,7 @@ const Navbar = () => {
         {showScrollIcons
           ? enableLeftScrolling && (
               <button
-                className="css-blur-bg-left absolute left-14 top-0 h-[33px] w-10 bg-slate-400 px-3 hover:bg-slate-500 sm:left-12 md:left-0"
+                className="css-blur-bg-left absolute left-14 top-0 h-[33px] w-10 bg-yellow-400 px-3 hover:bg-slate-500 sm:left-12 md:left-0"
                 onMouseDown={startLeftScroll}
                 onMouseUp={stopLeftScroll}
                 onMouseLeave={stopLeftScroll}
@@ -190,7 +190,7 @@ const Navbar = () => {
               <NavLink to={`${subject}`} key={index}>
                 {/* I substring subject from the 1 digit , since I dont want to have the '/' in the navbar for each link */}
                 <div
-                  className={`${splitPathname[1] === subject.slice(1) ? `bg-blue-600` : `hover:bg-slate-700`} px-3 py-3`}
+                  className={`${splitPathname[1] === subject.slice(1) ? `bg-blue-700` : `hover:bg-blue-500`} px-3 py-3`}
                 >
                   {subject.substring(1, 50)}
                 </div>
