@@ -1,18 +1,19 @@
-import aboutImg from "../../assets/header_banner.jpg";
+// import aboutImg from "../../assets/header_banner.jpg";
 
 const MyProjects = () => {
   return (
     <section className="bg-white px-0 py-8" id="MyProjects">
       <div className="about__center">
         <article className="about-img">
-          <img src={aboutImg} alt="about-img" className="about-img__photo" />
+          {/* <img src={aboutImg} alt="about-img" className="about-img__photo" /> */}
         </article>
         <article className="about-info">
           <div className="about-info__container">
             <h1 className="about-info__title">My Projects</h1>
             <p className="about-info__text">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aut nulla totam reprehenderit similique vel placeat ipsum natus eaque libero
-              nam.
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aut
+              nulla totam reprehenderit similique vel placeat ipsum natus eaque
+              libero nam.
             </p>
             <div className="about-info__links">
               <a href="#" className="about-info__single-link dark-btn">
