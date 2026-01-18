@@ -1,14 +1,16 @@
 import { NavLink, useLocation } from "react-router-dom";
 import { links } from "../utils/links";
 import { useEffect, useRef, useState } from "react";
-import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
+import { FaAngleLeft, FaAngleRight, FaLock } from "react-icons/fa";
 
 // https://medium.com/@rexosariemen/implementing-horizontal-scroll-buttons-in-react-61e0bb431be
 
 const Navbar = () => {
   const [showScrollIcons, setShowScrollIcons] = useState<boolean>(false);
-  const [enableLeftScrolling, setEnableLeftScrolling] = useState<boolean>(false);
-  const [enableRightScrolling, setEnableRightScrolling] = useState<boolean>(true);
+  const [enableLeftScrolling, setEnableLeftScrolling] =
+    useState<boolean>(false);
+  const [enableRightScrolling, setEnableRightScrolling] =
+    useState<boolean>(true);
 
   // const intervalRef = useRef<number | null>(null);
 
@@ -25,7 +27,10 @@ const Navbar = () => {
       if (navRef.current !== null) {
         // The maximum scrollLeft value is calculated by subtracting the
         // (scrollWidth - clientWidth) = maxScrollLeft of the element.
-        if (navRef.current.scrollLeft !== navRef.current.scrollWidth - navRef.current.clientWidth) {
+        if (
+          navRef.current.scrollLeft !==
+          navRef.current.scrollWidth - navRef.current.clientWidth
+        ) {
           setEnableRightScrolling(true);
           setEnableLeftScrolling(true);
         } else {
@@ -117,7 +122,9 @@ const Navbar = () => {
     // console.log(navRef.current?.scrollLeft);
 
     if (sessionStorage.getItem("showScrollIcons") !== null) {
-      const value = JSON.parse(sessionStorage.getItem("showScrollIcons") as string);
+      const value = JSON.parse(
+        sessionStorage.getItem("showScrollIcons") as string,
+      );
       setShowScrollIcons(value);
     } else {
       if (navRef.current !== null) {
@@ -136,10 +143,29 @@ const Navbar = () => {
   }, []);
 
   return (
-    <div className="top-nav-font fixed top-14 h-[33px] w-full select-none bg-gray-800 text-[13px] uppercase tracking-wider text-white">
-      <nav className="fixed left-0 right-0 top-14 z-[3] m-auto h-[33px] w-full max-w-[1750px] align-middle">
-        {/* left Scroll button */}
-
+    <div className="fixed h-[45px] w-full select-none bg-[#0f238c] text-[15px] font-medium text-white">
+      {/* Start Logo */}
+      <section className="absolute">
+        <article className="nav-center">
+          <div className="logo-parent">
+            <div className="logo-asml"></div>
+            <div className="logo-VRSS">VRSS</div>
+          </div>
+          <div className="logo-parent">
+            <div className="logo-cci">
+              <div className="logo-cci-internal">
+                <FaLock style={{ padding: "0" }} />
+              </div>
+              <div>CCI</div>
+            </div>
+            <div className="logo-version">2.4.0</div>
+          </div>
+          <div className="logo-seperator-parent"></div>
+        </article>
+      </section>
+      {/* End Logo */}
+      {/* Navbar */}
+      <nav className="fixed left-36 right-0 h-[45px] w-full">
         {showScrollIcons
           ? enableLeftScrolling && (
               <button
@@ -153,14 +179,19 @@ const Navbar = () => {
             )
           : ""}
 
-        <div className="ml-14 flex h-[33px] overflow-hidden sm:ml-14 md:ml-0 lg:ml-0" ref={navRef}>
+        <div
+          className="ml-14 flex h-[45px] overflow-hidden sm:ml-14 md:ml-0 lg:ml-0"
+          ref={navRef}
+        >
           {links.map((subject, index) => {
             // console.log(location);
             let splitPathname: string[] = location.pathname.split("/");
             return (
               <NavLink to={`${subject}`} key={index}>
                 {/* I substring subject from the 1 digit , since I dont want to have the '/' in the navbar for each link */}
-                <div className={`${splitPathname[1] === subject.slice(1) ? `bg-blue-600` : `hover:bg-slate-700`} px-3 py-2`}>
+                <div
+                  className={`${splitPathname[1] === subject.slice(1) ? `bg-blue-600` : `hover:bg-slate-700`} px-3 py-3`}
+                >
                   {subject.substring(1, 50)}
                 </div>
               </NavLink>

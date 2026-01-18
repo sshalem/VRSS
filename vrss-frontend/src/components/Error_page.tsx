@@ -5,7 +5,7 @@
 import { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
-const Error = () => {
+const Error_page = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -33,4 +33,4 @@ const Error = () => {
   );
 };
 
-export default Error;
+export default Error_page;

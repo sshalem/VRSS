@@ -15,5 +15,4 @@
 // export { default as Windows_page } from "./Windows/Windows_page";
 // export { default as Guitar_page } from "./Guitar/Guitar_page";
 
-export { default as Error_page } from "../components/Error_page";
 export { default as Home_page } from "./Home_page";
