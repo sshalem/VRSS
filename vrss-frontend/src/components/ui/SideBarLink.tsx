@@ -13,13 +13,14 @@ const SideBarLink = ({ pageName, internalLink }: { pageName: string; internalLin
     <Link to={internalLink}>
       <div className="text-[15px] text-base leading-[1.65]">
         {location.pathname === internalLink ? (
-          <div className="bg-gray-300 pl-8 font-medium text-black">{pageName}</div>
+          <div className="bg-[#96c9ff] pl-8 font-medium text-black">{pageName}</div>
         ) : (
-          <div className="pl-8 hover:bg-gray-300">{pageName}</div>
+          <div className="pl-8 hover:bg-[#96c9ff]">{pageName}</div>
         )}
       </div>
     </Link>
 
+    // bg-[#96c9ff]
     // <Link to={internalLink}>
     //   <div className="text-[15px] text-base leading-[1.65]">
     //     {location.pathname.substring(8).length === 0 && internalLink === "." ? (

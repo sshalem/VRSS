@@ -5,22 +5,12 @@
 
 export const links: string[] = [
   "/spring",
-  "/java",
-  "/microservices",
   "/python",
   "/fastapi",
   "/reactJS",
-  "/javascript",
-  "/html_css",
-  "/fullstack",
-  "/devops",
   "/linux",
-  "/postman",
-  "/sql",
-  "/guitar",
   "/windows",
   "/page_creation",
-  "/c++",
 ];
 
 // "/1",

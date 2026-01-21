@@ -3,8 +3,7 @@
 
 */
 import { Outlet } from "react-router-dom";
-import { GridLayout, SideBarLink } from "../../components";
-import { FaBars } from "react-icons/fa";
+import { AsideWrapperLayout, FlexLayout, SideBarLink } from "../../components";
 import { useEffect, useState } from "react";
 import D1_DropDownIDE from "./DropSpringPage/D1_DropDownIDE";
 import D2_DropDownApplicationProperties from "./DropSpringPage/D2_DropDownApplicationProperties";
@@ -22,6 +21,7 @@ import D13_DropDownSpringIO from "./DropSpringPage/D13_DropDownSpringIO";
 import D14_DropDownJUnit from "./DropSpringPage/D14_DropDownJUnit";
 import D15_DropDownJenkins from "./DropSpringPage/D15_DropDownJenkins";
 import D16_DropDownInterviewQuestions from "./DropSpringPage/D16_DropDownInterviewQuestions";
+import { FaBars } from "react-icons/fa";
 
 const Spring_page = () => {
   const [showSidebar, setShowSidebar] = useState<boolean>(true);
@@ -45,36 +45,35 @@ const Spring_page = () => {
   }, []);
 
   return (
-    <GridLayout>
+    <FlexLayout>
+      {/* End Bars Icon */}
       <FaBars className="css-fa-bars" onClick={toggleSideNavbar} />
+      {/* End Bars Icon */}
       {showSidebar && (
-        <article className="fixed bottom-0 top-[55px] z-50 w-64 overflow-auto bg-[#e7e9eb]">
-          <div className="relative h-full w-full">
-            <div className="h-3"></div>
-            <SideBarLink pageName="Spring Home" internalLink="/spring" />
-            <D1_DropDownIDE />
-            <D2_DropDownApplicationProperties />
-            <D3_DropDownLogging />
-            <D4_DropDownJpa />
-            <D5_DropDownAudit />
-            <D6_DropDownExceptionHandling />
-            <D7_DropDownRest />
-            <D8_DropDownSecurity />
-            <D9_DropDownAop />
-            <D10_DropDownTransactionManagement />
-            <D11_DropDownSpringBatch />
-            <D12_DropDownCaching />
-            <D13_DropDownSpringIO />
-            <D14_DropDownJUnit />
-            <D15_DropDownJenkins />
-            <D16_DropDownInterviewQuestions />
-          </div>
-        </article>
+        <AsideWrapperLayout>
+          <SideBarLink pageName="Spring Home" internalLink="/spring" />
+          <D1_DropDownIDE />
+          <D2_DropDownApplicationProperties />
+          <D3_DropDownLogging />
+          <D4_DropDownJpa />
+          <D5_DropDownAudit />
+          <D6_DropDownExceptionHandling />
+          <D7_DropDownRest />
+          <D8_DropDownSecurity />
+          <D9_DropDownAop />
+          <D10_DropDownTransactionManagement />
+          <D11_DropDownSpringBatch />
+          <D12_DropDownCaching />
+          <D13_DropDownSpringIO />
+          <D14_DropDownJUnit />
+          <D15_DropDownJenkins />
+          <D16_DropDownInterviewQuestions />
+        </AsideWrapperLayout>
       )}
       <main className="css-main-outlet">
         <Outlet />
       </main>
-    </GridLayout>
+    </FlexLayout>
   );
 };
 

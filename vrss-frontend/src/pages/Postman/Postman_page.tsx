@@ -3,7 +3,7 @@
 
 */
 import { Outlet } from "react-router-dom";
-import { GridLayout, SideBarLink } from "../../components";
+import { AsideWrapperLayout, FlexLayout, SideBarLink } from "../../components";
 import { FaBars } from "react-icons/fa";
 import { useEffect, useState } from "react";
 import DropDownMultipleRequest from "./DropPostman/DropDownMultipleRequest";
@@ -32,24 +32,21 @@ const Postman_page = () => {
   }, []);
 
   return (
-    <GridLayout>
+    <FlexLayout>
       <FaBars className="css-fa-bars" onClick={toggleSideNavbar} />
 
       {showSidebar && (
-        <article className="fixed bottom-0 top-[89px] w-64 overflow-auto bg-[#E7E9EB]">
-          <div className="relative h-full w-full">
-            <div className="h-3"></div>
-            <SideBarLink pageName="Postman Home" internalLink="/postman" />
-            <DropDownCollection />
-            <DropDownEnvironment />
-            <DropDownMultipleRequest />
-          </div>
-        </article>
+        <AsideWrapperLayout>
+          <SideBarLink pageName="Postman Home" internalLink="/postman" />
+          <DropDownCollection />
+          <DropDownEnvironment />
+          <DropDownMultipleRequest />
+        </AsideWrapperLayout>
       )}
       <main className="css-main-outlet">
         <Outlet />
       </main>
-    </GridLayout>
+    </FlexLayout>
   );
 };
 

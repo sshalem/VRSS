@@ -1,11 +1,5 @@
-export { default as Cpp_page } from "./Cpp/Cpp_page";
 export { default as DevOps_page } from "./DevOps/DevOps_page";
-export { default as FullStack_page } from "./FullStack/FullStack_page";
-export { default as HTML_CSS_page } from "./HTML_CSS/HTML_CSS_page";
-export { default as Java_page } from "./Java/Java_page";
-export { default as JavaScript_page } from "./JavaScript/JavaScript_page";
 export { default as Linux_page } from "./Linux/Linux_page";
-export { default as MicroServices_page } from "./MicroServices/MicroServices_page";
 export { default as Page_Creation_page } from "./PageCreate/Page_Creation_page";
 export { default as Postman_page } from "./Postman/Postman_page";
 export { default as Python_page } from "./Python/Python_page";

@@ -1,7 +1,9 @@
 export { default as MainLayout } from "./MainLayout";
 export { default as TopNavbar } from "./home/TopNavbar";
 export { default as Navbar } from "./Navbar";
-export { default as GridLayout } from "./ui/GridLayout";
+export { default as AsideWrapperLayout } from "./AsideWrapperLayout";
+export { default as FlexLayout } from "./ui/FlexLayout";
+export { default as Subject } from "./ui/Subject";
 export { default as AboutMe } from "./home/AboutMe";
 export { default as MyProjects } from "./home/MyProjects";
 // export { default as ContentAnchor } from "./ui/ContentAnchor";

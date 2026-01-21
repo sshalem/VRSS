@@ -30,9 +30,17 @@
   /* .css-main-outlet {
     @apply ml-0 max-h-[750px] w-[1500px] min-w-[400px] overflow-auto border-r-[1px] border-solid border-zinc-300 px-8 sm:ml-0 md:ml-64;
   } */
-
+  /* 
   .css-main-outlet {
     @apply ml-0 max-h-[750px] w-full min-w-[400px] overflow-auto border-[2px] border-solid border-red-500 px-8 sm:ml-0 md:ml-64;
+  } */
+
+  .css-main-outlet {
+    @apply ml-0 max-h-[850px] w-full min-w-[400px] overflow-auto sm:ml-0 md:ml-64;
+  }
+
+  .css-page-content {
+    @apply ml-2 w-11/12 min-w-[400px] overflow-auto sm:ml-2 md:ml-10;
   }
 
   .css-ul {
@@ -42,8 +50,9 @@
   .css-title {
     @apply my-8 inline-block select-none rounded-md bg-teal-500 px-2 py-1 text-xl capitalize tracking-widest text-white;
   }
+
   .css-fa-bars {
-    @apply fixed left-5 top-16 z-50 cursor-pointer bg-blue-950 text-white md:hidden;
+    @apply fixed left-5 top-5 z-50 h-5 w-5 cursor-pointer bg-[#0f238c] text-white md:hidden;
   }
 }
 
@@ -277,7 +286,7 @@
   color: "white";
 }
 
-.logo-asml {
+.css-logo-asml {
   margin-bottom: 0.25rem;
   width: 2.85rem;
   height: 1rem;
@@ -300,23 +309,16 @@
 .logo-cci {
   display: flex;
   justify-content: space-between;
-  flex-direction: row;
-  width: 2.5rem;
+  align-items: center;
+  width: 3rem;
   user-select: none;
   font-size: 0.75rem;
-  height: 1.18rem;
-  font-weight: 500;
-  background-color: red;
+  /* height: 2.18rem; */
+  background-color: rgb(255, 0, 0);
   border-radius: 8px;
   padding-top: 1px;
-  /* padding-bottom: 8px; */
   padding-left: 3px;
   padding-right: 5px;
-  /* text-align: center; */
-  /* align-self: center; */
-}
-.logo-cci-internal {
-  align-self: center;
 }
 
 .logo-version {
@@ -327,7 +329,7 @@
 
 .logo-seperator-parent {
   width: 1.25rem;
-  border-left: 1px solid grey;
+  border-left: 1px solid #808080;
   /* border: 2px solid red; */
   height: 2.5rem;
 }
