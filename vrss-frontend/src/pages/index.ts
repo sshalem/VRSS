@@ -1,13 +1,7 @@
-export { default as DevOps_page } from "./DevOps/DevOps_page";
-export { default as Linux_page } from "./Linux/Linux_page";
 export { default as Page_Creation_page } from "./PageCreate/Page_Creation_page";
-export { default as Postman_page } from "./Postman/Postman_page";
-export { default as Python_page } from "./Python/Python_page";
-export { default as ReactJS_page } from "./ReactJS/ReactJS_page";
-export { default as Spring_page } from "./Spring/Spring_page";
-export { default as Sql_page } from "./Sql/Sql_page";
-export { default as Windows_page } from "./Windows/Windows_page";
-export { default as Guitar_page } from "./Guitar/Guitar_page";
+export { default as WaferStage_page } from "./WaferStage/WaferStage_page";
+export { default as WaferHandler_page } from "./WaferHandler/WaferHandler_page";
+export { default as Software_page } from "./Software/Software_page";
 
 export { default as Error_page } from "./Error_page";
 export { default as Home_page } from "./Home_page";

@@ -4,12 +4,15 @@
 // Thus, I add forward slash to each link
 
 export const links: string[] = [
-  "/spring",
-  "/python",
-  "/fastapi",
-  "/reactJS",
-  "/linux",
-  "/windows",
+  "/waferstage",
+  "/waferhandler",
+  "/reticlestage",
+  "/reticlehandler",
+  "/f&t",
+  "/software",
+  "/illumination",
+  "/projection",
+  "/metrology",
   "/page_creation",
 ];
 
