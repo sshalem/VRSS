@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { SideDropDownTopic } from "../../../components";
 
-const DropDownTemp = () => {
+const DropDownRSTemp = () => {
   const [showList, setShowList] = useState<boolean>(false);
   const [listHeight, setListHeight] = useState<number>();
 
@@ -18,7 +18,7 @@ const DropDownTemp = () => {
   };
 
   useEffect(() => {
-    if (location.pathname.includes("waferstage/temp")) {
+    if (location.pathname.includes("reticlestage/rs-temp")) {
       if (location.pathname.split("/")[3] === undefined) {
         // do nothing , this way I prevent the re-render of  setShowList(true);
       } else {
@@ -38,8 +38,8 @@ const DropDownTemp = () => {
         enableCaret={false}
         showList={showList}
         handleOpenList={handleOpenList}
-        internalLink="/waferstage/temp"
-        topicName="temp"
+        internalLink="/reticlestage/rs-temp"
+        topicName="RS temp"
       />
 
       <div
@@ -51,4 +51,4 @@ const DropDownTemp = () => {
   );
 };
 
-export default DropDownTemp;
+export default DropDownRSTemp;

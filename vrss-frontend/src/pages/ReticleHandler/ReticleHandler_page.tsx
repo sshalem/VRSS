@@ -6,10 +6,10 @@ import { Outlet } from "react-router-dom";
 import { AsideWrapperLayout, FlexLayout, SideBarLink } from "../../components";
 import { FaBars } from "react-icons/fa";
 import { useEffect, useState } from "react";
-import DropDownRSTemp from "./DropReticleStage/DropDownRSTemp";
-import DropDownRSBatch from "./DropReticleStage/DropDownRSBatch";
+import DropDownRHTemp from "./DropReticleHandler/DropDownRHTemp";
+import DropDownRHBatch from "./DropReticleHandler/DropDownRHBatch";
 
-const ReticleStage_page = () => {
+const ReticleHandler_page = () => {
   const [showSidebar, setShowSidebar] = useState<boolean>(true);
 
   const toggleSideNavbar = () => {
@@ -37,11 +37,11 @@ const ReticleStage_page = () => {
       {showSidebar && (
         <AsideWrapperLayout>
           <SideBarLink
-            pageName="Reticle Stage Home"
-            internalLink="/reticlestage"
+            pageName="Reticle Handler Home"
+            internalLink="/reticlehandler"
           />
-          <DropDownRSTemp />
-          <DropDownRSBatch />
+          <DropDownRHTemp />
+          <DropDownRHBatch />
         </AsideWrapperLayout>
       )}
       <main className="css-main-outlet">
@@ -51,4 +51,4 @@ const ReticleStage_page = () => {
   );
 };
 
-export default ReticleStage_page;
+export default ReticleHandler_page;

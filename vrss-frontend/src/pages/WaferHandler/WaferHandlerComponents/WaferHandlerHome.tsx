@@ -5,7 +5,7 @@
 import { Subject } from "../../../components";
 const WaferHandlerHome = () => {
   return (
-    <Subject title="WaferHandler Home...">
+    <Subject title="Wafer Handler Home...">
       <div></div>
     </Subject>
   );

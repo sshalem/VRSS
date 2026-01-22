@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { SideDropdownLink, SideDropDownTopic } from "../../../components";
 
-const DropDownBatch = () => {
+const DropDownRHBatch = () => {
   const [showList, setShowList] = useState<boolean>(false);
   const [listHeight, setListHeight] = useState<number>();
 
@@ -18,7 +18,7 @@ const DropDownBatch = () => {
   };
 
   useEffect(() => {
-    if (location.pathname.includes("waferstage/batch")) {
+    if (location.pathname.includes("reticlehandler/rh-batch")) {
       if (location.pathname.split("/")[3] === undefined) {
         // do nothing , this way I prevent the re-render of  setShowList(true);
       } else {
@@ -38,8 +38,8 @@ const DropDownBatch = () => {
         enableCaret={true}
         showList={showList}
         handleOpenList={handleOpenList}
-        internalLink="/waferstage/batch"
-        topicName="Batch"
+        internalLink="/reticlehandler/rh-batch"
+        topicName="RS Batch"
       />
 
       <div
@@ -48,12 +48,12 @@ const DropDownBatch = () => {
         ref={divRef}
       >
         <SideDropdownLink
-          sideDropDownNavName="ASCII"
-          internalLink="/waferstage/batch/ascii"
+          sideDropDownNavName="RH ASCII"
+          internalLink="/reticlehandler/rh-batch/rh-ascii"
         />
       </div>
     </section>
   );
 };
 
-export default DropDownBatch;
+export default DropDownRHBatch;

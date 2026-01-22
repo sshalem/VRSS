@@ -4,6 +4,7 @@ import {
   Error_page,
   Home_page,
   Page_Creation_page,
+  ReticleHandler_page,
   ReticleStage_page,
   Software_page,
   WaferHandler_page,
@@ -38,6 +39,8 @@ import {
   SWAsciiMain,
   TempSWMain,
 } from "./pages/Software/SoftwareComponents";
+import { ReticleHandlerHome } from "./pages/ReticleHandler/ReticleHandlerComponents";
+import { ReticleStageHome } from "./pages/ReticleStage/ReticleStageComponents";
 
 const router = createBrowserRouter(
   [
@@ -79,12 +82,26 @@ const router = createBrowserRouter(
           path: "reticlestage",
           element: <ReticleStage_page />,
           children: [
-            { index: true, element: <WaferStageHome /> },
-            { path: "temp", element: <TempMain /> },
+            { index: true, element: <ReticleStageHome /> },
+            { path: "rs-temp", element: <TempMain /> },
             {
-              path: "batch",
+              path: "rs-batch",
               element: <Batch />,
-              children: [{ path: "ascii", element: <AsciiMain /> }],
+              children: [{ path: "rs-ascii", element: <AsciiMain /> }],
+            },
+          ],
+        },
+
+        {
+          path: "reticlehandler",
+          element: <ReticleHandler_page />,
+          children: [
+            { index: true, element: <ReticleHandlerHome /> },
+            { path: "rh-temp", element: <TempMain /> },
+            {
+              path: "rh-batch",
+              element: <Batch />,
+              children: [{ path: "rh-ascii", element: <AsciiMain /> }],
             },
           ],
         },
