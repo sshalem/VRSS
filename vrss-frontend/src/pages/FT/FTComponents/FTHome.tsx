@@ -3,12 +3,12 @@
 
 */
 import { Subject } from "../../../components";
-const SoftwareHome = () => {
+const FTHome = () => {
   return (
-    <Subject title="Software Home...">
+    <Subject title="F&T Home...">
       <div></div>
     </Subject>
   );
 };
 
-export default SoftwareHome;
+export default FTHome;

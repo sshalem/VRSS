@@ -41,6 +41,20 @@ import {
 } from "./pages/Software/SoftwareComponents";
 import { ReticleHandlerHome } from "./pages/ReticleHandler/ReticleHandlerComponents";
 import { ReticleStageHome } from "./pages/ReticleStage/ReticleStageComponents";
+import FT_page from "./pages/FT/FT_page";
+import {
+  AsciiFTMain,
+  FT_Batch,
+  FTHome,
+  TempFTMain,
+} from "./pages/FT/FTComponents";
+import Illumination_page from "./pages/Illumination/Illumination_page";
+import {
+  IL_Batch,
+  ILAsciiMain,
+  IlluminationHome,
+  TempILMain,
+} from "./pages/Illumination/IlluminationComponents";
 
 const router = createBrowserRouter(
   [
@@ -107,6 +121,20 @@ const router = createBrowserRouter(
         },
 
         {
+          path: "f&t",
+          element: <FT_page />,
+          children: [
+            { index: true, element: <FTHome /> },
+            { path: "ft-temp", element: <TempFTMain /> },
+            {
+              path: "ft-batch",
+              element: <FT_Batch />,
+              children: [{ path: "ft-ascii", element: <AsciiFTMain /> }],
+            },
+          ],
+        },
+
+        {
           path: "software",
           element: <Software_page />,
           children: [
@@ -116,6 +144,20 @@ const router = createBrowserRouter(
               path: "sw-batch",
               element: <SW_Batch />,
               children: [{ path: "sw-ascii", element: <SWAsciiMain /> }],
+            },
+          ],
+        },
+
+        {
+          path: "illumination",
+          element: <Illumination_page />,
+          children: [
+            { index: true, element: <IlluminationHome /> },
+            { path: "il-temp", element: <TempILMain /> },
+            {
+              path: "il-batch",
+              element: <IL_Batch />,
+              children: [{ path: "il-ascii", element: <ILAsciiMain /> }],
             },
           ],
         },

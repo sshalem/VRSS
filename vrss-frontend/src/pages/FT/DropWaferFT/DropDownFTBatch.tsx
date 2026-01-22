@@ -1,0 +1,59 @@
+import { useEffect, useRef, useState } from "react";
+import { useLocation } from "react-router-dom";
+import { SideDropdownLink, SideDropDownTopic } from "../../../components";
+
+const DropDownFTBatch = () => {
+  const [showList, setShowList] = useState<boolean>(false);
+  const [listHeight, setListHeight] = useState<number>();
+
+  let location = useLocation();
+
+  const divRef = useRef<HTMLDivElement | null>(null);
+
+  const handleOpenList = () => {
+    setShowList(!showList);
+    if (divRef.current !== null) {
+      setListHeight(divRef.current.scrollHeight);
+    }
+  };
+
+  useEffect(() => {
+    if (location.pathname.includes("f&t/ft-batch")) {
+      if (location.pathname.split("/")[3] === undefined) {
+        // do nothing , this way I prevent the re-render of  setShowList(true);
+      } else {
+        setShowList(true);
+      }
+      if (divRef.current !== null) {
+        setListHeight(divRef.current.scrollHeight);
+      }
+    } else {
+      setShowList(false);
+    }
+  }, [location.pathname]);
+
+  return (
+    <section>
+      <SideDropDownTopic
+        enableCaret={true}
+        showList={showList}
+        handleOpenList={handleOpenList}
+        internalLink="/f&t/ft-batch"
+        topicName="FT Batch"
+      />
+
+      <div
+        style={showList ? { height: `${listHeight}px` } : { height: "0px" }}
+        className={`overflow-hidden bg-white transition-[height] duration-100 ease-in-out`}
+        ref={divRef}
+      >
+        <SideDropdownLink
+          sideDropDownNavName="FT ASCII"
+          internalLink="/f&t/ft-batch/ft-ascii"
+        />
+      </div>
+    </section>
+  );
+};
+
+export default DropDownFTBatch;
