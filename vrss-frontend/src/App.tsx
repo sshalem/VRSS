@@ -4,6 +4,7 @@ import {
   Error_page,
   Home_page,
   Page_Creation_page,
+  ReticleStage_page,
   Software_page,
   WaferHandler_page,
   WaferStage_page,
@@ -70,6 +71,20 @@ const router = createBrowserRouter(
               path: "wh-batch",
               element: <WH_Batch />,
               children: [{ path: "wh-ascii", element: <WHAsciiMain /> }],
+            },
+          ],
+        },
+
+        {
+          path: "reticlestage",
+          element: <ReticleStage_page />,
+          children: [
+            { index: true, element: <WaferStageHome /> },
+            { path: "temp", element: <TempMain /> },
+            {
+              path: "batch",
+              element: <Batch />,
+              children: [{ path: "ascii", element: <AsciiMain /> }],
             },
           ],
         },
