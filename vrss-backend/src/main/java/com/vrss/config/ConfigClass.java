@@ -25,7 +25,7 @@ import java.util.Collection;
 public class ConfigClass {
 
     @Bean
-    public RestTemplate restTemplate() throws Exception {
+    RestTemplate restTemplate() throws Exception {
 
         String pemPath = "C:/Users/sshalem/OneDrive - ASML/ASML/BRES_pem/f28ecentre01-intel-com-chain.pem";
 
