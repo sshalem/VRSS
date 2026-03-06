@@ -1,44 +1,32 @@
 package com.vrss.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
-
-
-import java.net.http.*;
-import java.net.URI;
-import java.time.Duration;
-import java.util.Base64;
-import javax.net.ssl.SSLContext;
-
+import org.springframework.http.*;
 
 @Service
 public class VrssService {
 
+	@Autowired
 	private RestTemplate restTemplate;
 
-	public VrssService(RestTemplate restTemplate) {
-		super();
-		this.restTemplate = restTemplate;
+	public String connectToASMLServer() {
+		String url = "https://f28ecentre01.intel.com/ecweb/echttpproxy/ASML.TWINSCAN.MEU04.HTTP/AIDwebdav/root/CT/CTRW_log_mEU04.cur";
+
+		String username = "asml_sshalem";
+		String password = "Odel1!!";
+
+		HttpHeaders headers = new HttpHeaders();
+		headers.setBasicAuth(username, password);
+
+		HttpEntity<Void> request = new HttpEntity<>(headers);
+
+		ResponseEntity<String> response = restTemplate.exchange(url, HttpMethod.GET, request, String.class);
+
+		return response.getBody();
 	}
-
-	public void connectToASMLServer() {
-
-//		String url = "https://f28ecentre01.intel.com/ecweb/echttpproxy/ASML.TWINSCAN.MEU04.HTTP/AIDwebdav/root/CT/CTRW_log_mEU04.cur";
-//		String response = restTemplate.
-
-//		System.out.println(response);
-
-	}
-
-	HttpClient client = HttpClient.newBuilder()
-			.sslContext(buildSslContextTrustingPem("C:/.../f28ecentre01-intel-com-chain.pem"))
-			.connectTimeout(Duration.ofSeconds(5)).build();
-
-	String basic = Base64.getEncoder().encodeToString("yourUser:yourPassword".getBytes());
-	HttpRequest req = HttpRequest.newBuilder().uri(URI.create("https://f28ecentre01.intel.com/your/api"))
-			.header("Authorization", "Basic " + basic).GET().build();
-
-	HttpResponse<String> resp = client.send(req, HttpResponse.BodyHandlers.ofString());
-	String body = resp.body();
 
 }
