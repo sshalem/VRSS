@@ -26,6 +26,8 @@ public class VrssService {
 
 		ResponseEntity<String> response = restTemplate.exchange(url, HttpMethod.GET, request, String.class);
 
+//		System.out.println(response.getBody());
+		
 		return response.getBody();
 	}
 

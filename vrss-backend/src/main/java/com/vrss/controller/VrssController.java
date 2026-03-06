@@ -19,7 +19,6 @@ public class VrssController {
 
 	@GetMapping(path = "/connectASMLserver")
 	public String checkApi() {
-		vrssService.connectToASMLServer();
-		return "executed";
+		return vrssService.connectToASMLServer();
 	}
 }
