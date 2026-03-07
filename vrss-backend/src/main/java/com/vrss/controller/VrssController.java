@@ -1,5 +1,6 @@
 package com.vrss.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -10,15 +11,11 @@ import com.vrss.service.VrssService;
 @RequestMapping(path = "/vrss")
 public class VrssController {
 
-	private VrssService vrssService;
-
-	public VrssController(VrssService vrssService) {
-		super();
-		this.vrssService = vrssService;
-	}
+	@Autowired
+	private VrssService vrssServiceTest;
 
 	@GetMapping(path = "/connectASMLserver")
 	public String checkApi() {
-		return vrssService.connectToASMLServer();
+		return vrssServiceTest.connectToASMLServerTest();
 	}
 }
